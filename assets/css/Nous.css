@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+body{
+    background-color: #2c2d33;
+
+}
+.container{
+    margin-top: 0px;
+}
+.team-wrapper{
+    background: #2c2d33;
+    padding: 50px 0px;
+    min-height: 100vh;
+}
+.section-title{
+    padding: 60px 0px;
+    margin-top: -100px;
+
+}
+.section-title h2{
+    font-size: 50px;
+    font-weight: 900;
+    color: #77A5F8;
+}
+.menu {
+    display: flex;
+    width: 50px;
+    margin-left: 300px;
+    margin-right: 23px;
+
+}
+.logo {
+    color: #71FFFB;
+    font-weight: 700;
+    font-size: 39px;
+}
+
+.logo span {
+    color: #77A5F8;
+}
+.menu li {
+    margin: 10px 30px;
+    list-style: none;
+}
+.menu li a {
+    font-size: 15px;
+    text-decoration: 0;
+    color: #2c2d33;
+    position: relative;
+}
+.menu li a::before {
+    position: absolute;
+    top: -5px;
+    left: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 6px;
+    background-color: #71FFFB;
+    transition: 0.5s;
+}
+
+.menu li a:hover::before {
+    width: 100%;
+}
+.menu li a::after {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    content: "";
+    width: 0;
+    height: 2px;
+    border-radius: 6px;
+    background-color: #71FFFB;
+    transition: 0.5s;
+}
+.menu li a:hover::after {
+    width: 100%;
+}
+.menu li a:hover {
+    color: #77A5F8;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 105px; /* la hauteur */
+    padding: 0 6%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255 255 255 /0.9);
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+#menu-btn{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--black);
+    display: none;
+}
+ul{
+    display: flex;
+    justify-content: center;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    text-transform: capitalize;
+}
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+html::-webkit-scrollbar-track{
+    background: var(--white);
+}
+html::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+section {
+    padding: 5rem 10%;
+}
+
+.section-title h2 span{
+    font-size: 50px;
+    font-weight: 900;
+    color: #71FFFB;
+}
+.team-item{
+    position: relative;
+    background: #424248;
+    margin: 15px 5px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .5s;
+}
+.item-meta{
+    position: absolute;
+    background: #424248;
+    width: 100%;
+    bottom: -91px;
+    left: 0;
+    padding: 10px 20px;
+    transition: all .5s;
+}
+
+
+.team-item:hover .item-meta{
+    bottom: 0px;
+}
+.item-meta h3{
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+}
+.item-meta h6{
+    color: #71FFFB;
+}
+.item-image img{
+    transition: all .5s;
+}
+.team-item:hover img {
+    border: 7px solid transparent; /* Définir une bordure transparente pour réserver de l'espace pour le dégradé */
+    border-image: linear-gradient(#71FFFB 0%, #77A5F8 100%);
+    border-image-slice: 1; /* Définir la largeur de la bordure */
+}
+.team-image {
+    width: 100%; /* définir une largeur de 100% pour que l'image prenne la largeur totale de son conteneur */
+    height: 250px; /* définir une hauteur fixe pour toutes les images d'équipe */
+    object-fit: cover; /* assurez-vous que l'image couvre complètement son conteneur tout en respectant les proportions */
+}
+
+@media (max-width:1200px){
+    section{
+        padding: 3rem 5%;
+    }
+}
+@media (max-width: 991px){
+    html{
+        font-size: 55%;
+    }
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px){
+    #menu-btn{
+        display: inline-block;
+        transition: .3s linear;
+    }
+    #menu-btn.fa-times{
+        transform: rotate(180deg);
+    }
+
+    .menu {
+        position: absolute;
+        top: 99%; left: 0; right: 0;
+        background: var(--white);
+        padding: 2rem;
+        border-top: var(--border);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .3s linear;
+    }
+
+    .menu.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    header .menu a{
+        display: block;
+        text-align: center;
+        margin: 2rem;
+    }
+}
+
+@media (max-width: 450px){
+    html{
+        font-size: 50%;
+    }
+    .heading-title{
+        font-size: 3.5rem;
+    }
+}
